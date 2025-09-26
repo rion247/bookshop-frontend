@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../../store";
 
-export type TUser = {
+export type TUserforJWT = {
   userEmail: string;
   role: string;
   iat: number;
@@ -9,7 +9,7 @@ export type TUser = {
 };
 
 export interface IAuthState {
-  user: TUser | null;
+  user: TUserforJWT | null;
   token: string | null;
 }
 

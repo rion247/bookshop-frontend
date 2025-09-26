@@ -1,7 +1,7 @@
 const DashBoardLayOut = () => {
   return (
     <div>
-      <h1>DashBoard LayOut Page</h1>
+      <h1 className="">DashBoard LayOut Page</h1>
     </div>
   );
 };
