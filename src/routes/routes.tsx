@@ -8,6 +8,7 @@ import DashBoardLayOut from "../components/layout/DashBoardLayOut/DashBoardLayOu
 import routesGenerator from "../utilis/routesGenerator";
 import adminMainRoutes from "./admin.routes";
 import userMainRoutes from "./user.routes";
+import ProtectedRoute from "../components/layout/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -23,13 +24,21 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <DashBoardLayOut />,
+    element: (
+      <ProtectedRoute role={"admin"}>
+        <DashBoardLayOut />
+      </ProtectedRoute>
+    ),
     errorElement: <ErrorPage />,
     children: routesGenerator(adminMainRoutes),
   },
   {
     path: "/user",
-    element: <DashBoardLayOut />,
+    element: (
+      <ProtectedRoute role={"user"}>
+        <DashBoardLayOut />
+      </ProtectedRoute>
+    ),
     errorElement: <ErrorPage />,
     children: routesGenerator(userMainRoutes),
   },

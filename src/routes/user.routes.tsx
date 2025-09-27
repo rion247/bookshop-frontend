@@ -1,3 +1,6 @@
+import MyOrders from "../pages/user/OrderManagement/MyOrders";
+import ChangePassword from "../pages/user/ProfileManagement/ChangePassword";
+import EditPersonalInfo from "../pages/user/ProfileManagement/EditPersonalInfo";
 import UserDashBoard from "./../pages/user/UserDashBoard";
 
 const userMainRoutes = [
@@ -6,18 +9,31 @@ const userMainRoutes = [
     path: "dashboard",
     element: <UserDashBoard />,
   },
+  {
+    name: "Profile Management",
+    children: [
+      {
+        name: "Edit Personal Info",
+        path: "edit-personal-info",
+        element: <EditPersonalInfo />,
+      },
+      {
+        name: "Change Password",
+        path: "change-password",
+        element: <ChangePassword />,
+      },
+    ],
+  },
+  {
+    name: "Order Management",
+    children: [
+      {
+        name: "View All Order",
+        path: "View-all-order",
+        element: <MyOrders />,
+      },
+    ],
+  },
 ];
 
 export default userMainRoutes;
-
-// {
-//     name: "User Management",
-//     children: [
-//       {
-//         name: "Create Admin",
-//         path: "create-admin",
-//         element: <CreateAdmin />,
-//       },
-
-//     ],
-//   },
