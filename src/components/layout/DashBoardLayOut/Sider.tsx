@@ -76,7 +76,12 @@ const SiderContent = () => {
           <span className="text-white">eBookNest</span>
         </Link>
       </div>
-      <Menu theme="dark" mode="inline" items={items as ItemType[]} />
+      <Menu
+        theme="dark"
+        mode="inline"
+        defaultSelectedKeys={["4"]}
+        items={items as ItemType[]}
+      />
     </Sider>
   );
 };

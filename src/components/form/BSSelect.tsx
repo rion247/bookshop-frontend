@@ -7,7 +7,7 @@ type BSSelectProps = {
   name: string;
   options: { value: string; label: string; disabled?: boolean }[] | undefined;
   disabled?: boolean;
-  mode: "multiple" | undefined;
+  mode?: "multiple" | undefined;
 };
 
 const BSSelect = ({ label, name, options, disabled, mode }: BSSelectProps) => {
@@ -22,7 +22,7 @@ const BSSelect = ({ label, name, options, disabled, mode }: BSSelectProps) => {
             options={options}
             mode={mode}
             disabled={disabled}
-          />{" "}
+          />
           {error && <small style={{ color: "red" }}>{error.message}</small>}
         </FormItem>
       )}
