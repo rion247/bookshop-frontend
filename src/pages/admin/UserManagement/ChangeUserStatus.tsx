@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useGetAllUserQuery } from "../../../redux/features/user/userManagementApi";
 import { Pagination, Table, Tag, type TableColumnsType } from "antd";
 import UpdateUserStatus from "./UpdateUserStatusModal";
+import ChangeUserRoleModal from "./ChangeUserRoleModal";
 
 export type TTableDataForViewAllUser = {
   key: string;
@@ -92,11 +93,18 @@ const ChangeUserStatus = () => {
     },
 
     {
-      title: "Order Status",
+      title: "Action",
       key: "x",
       render: (item) => {
-        return <UpdateUserStatus item={item} />;
+        const { email } = item;
+        return (
+          <div className="flex justify-center items-center gap-2">
+            <UpdateUserStatus item={item} />
+            <ChangeUserRoleModal item={email} />
+          </div>
+        );
       },
+      width: "1%",
     },
   ];
 

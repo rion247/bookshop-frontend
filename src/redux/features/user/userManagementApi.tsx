@@ -46,6 +46,14 @@ export const userManagementApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["UserData"],
     }),
+    changeUserRole: build.mutation({
+      query: ({ email, data }) => ({
+        url: `/users/change-role/${email}`,
+        method: "PATCH",
+        body: data,
+      }),
+      invalidatesTags: ["UserData"],
+    }),
     updateUserProfile: build.mutation({
       query: ({ email, data }) => ({
         url: `/users/${email}`,
@@ -63,4 +71,5 @@ export const {
   useGetMeQuery,
   useChangeUserStatusMutation,
   useUpdateUserProfileMutation,
+  useChangeUserRoleMutation,
 } = userManagementApi;

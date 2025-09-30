@@ -72,7 +72,7 @@ const UpdateUserStatus = ({ item }: { item: TTableDataForViewAllUser }) => {
   return (
     <>
       <Button type="primary" onClick={showModal}>
-        Update
+        Update Status
       </Button>
       <Modal
         title={null}
