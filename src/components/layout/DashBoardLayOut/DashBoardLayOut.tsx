@@ -20,7 +20,7 @@ const DashBoardLayOut: React.FC = () => {
 
   return (
     <ProtectedRoute role={undefined}>
-      <Layout style={{ height: "100vh" }}>
+      <Layout style={{ height: "100%" }}>
         <SiderContent />
         <Layout>
           <Header

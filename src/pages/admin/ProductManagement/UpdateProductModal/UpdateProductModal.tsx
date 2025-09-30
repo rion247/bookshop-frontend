@@ -1,42 +1,68 @@
-import { Button, Col, Flex, Form, Row } from "antd";
-import BSForm from "../../../components/form/BSForm";
+import { useState } from "react";
+import { Button, Col, Form, Modal, Row } from "antd";
+import { BiSolidEditAlt } from "react-icons/bi";
+import BSForm from "../../../../components/form/BSForm";
+import BSInput from "../../../../components/form/BSInput";
 import {
   Controller,
   type FieldValues,
   type SubmitHandler,
 } from "react-hook-form";
-import BSInput from "../../../components/form/BSInput";
 import TextArea from "antd/es/input/TextArea";
-import { useCreateProductMutation } from "../../../redux/features/product/productManagementApi";
+import type { TTableDataForViewAllProduct } from "../ViewAllProducts";
+import type { TProduct, TResponseRedux } from "../../../../types";
 import { toast } from "sonner";
-import type { TProduct, TResponseRedux } from "../../../types";
+import { useUpdateSingleProductMutation } from "../../../../redux/features/product/productManagementApi";
 
-const AddNewProduct = () => {
-  const [createProduct] = useCreateProductMutation();
+const UpdateProductModal = ({
+  item,
+}: {
+  item: TTableDataForViewAllProduct;
+}) => {
+  const { key } = item;
+  const [updateSingleProduct] = useUpdateSingleProductMutation();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const toastId = toast.loading("Loading...");
 
     const modifiedData = {
-      ...data,
-      price: Number(data?.price),
-      quantity: Number(data?.quantity),
+      id: key,
+      data: {
+        title: data?.title,
+        description: data?.description,
+        author: data?.author,
+        category: data?.category,
+        quantity: Number(data?.quantity),
+        price: Number(data?.price),
+        image: data?.image,
+      },
     };
 
-    console.log(modifiedData);
+    // console.log(modifiedData);
 
     try {
-      const res = (await createProduct(
+      const res = (await updateSingleProduct(
         modifiedData
       )) as TResponseRedux<TProduct>;
 
       if (res?.error) {
         toast.error(res?.error?.data?.message, { id: toastId });
       } else {
-        toast.success("Product Created Successfully!!!", {
+        toast.success("Product Information Updated Successfully!!!", {
           id: toastId,
           duration: 2000,
         });
+        setIsModalOpen(false);
       }
     } catch (err) {
       console.log(err);
@@ -47,9 +73,18 @@ const AddNewProduct = () => {
   };
 
   return (
-    <Flex justify="center" align="center">
-      <Col span={12}>
-        <BSForm onSubmit={onSubmit}>
+    <>
+      <Button onClick={showModal}>
+        <BiSolidEditAlt className="text-blue-600" />
+      </Button>
+      <Modal
+        title="Update Product Information"
+        closable={{ "aria-label": "Custom Close Button" }}
+        open={isModalOpen}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <BSForm onSubmit={onSubmit} defaultValues={item}>
           <Row gutter={12}>
             <Col span={24}>
               <BSInput type="text" name="title" label="Book Title" />
@@ -91,13 +126,16 @@ const AddNewProduct = () => {
               <BSInput type="text" name="image" label="Image" />
             </Col>
           </Row>
-          <Button type="primary" block htmlType="submit">
-            Create Product
-          </Button>
+          <div className="flex justify-end gap-2">
+            <Button onClick={handleCancel}>Cancel</Button>
+            <Button type="primary" htmlType="submit">
+              Edit
+            </Button>
+          </div>
         </BSForm>
-      </Col>
-    </Flex>
+      </Modal>
+    </>
   );
 };
 
-export default AddNewProduct;
+export default UpdateProductModal;
