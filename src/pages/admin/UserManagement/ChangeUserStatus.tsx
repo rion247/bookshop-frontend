@@ -3,6 +3,7 @@ import { useGetAllUserQuery } from "../../../redux/features/user/userManagementA
 import { Pagination, Table, Tag, type TableColumnsType } from "antd";
 import UpdateUserStatus from "./UpdateUserStatusModal";
 import ChangeUserRoleModal from "./ChangeUserRoleModal";
+import Loading from "../../Loading/Loading";
 
 export type TTableDataForViewAllUser = {
   key: string;
@@ -109,7 +110,7 @@ const ChangeUserStatus = () => {
   ];
 
   if (isLoading) {
-    <p>Loading...</p>;
+    <Loading />;
   }
 
   return (

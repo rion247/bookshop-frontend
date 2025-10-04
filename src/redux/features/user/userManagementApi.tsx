@@ -34,7 +34,7 @@ export const userManagementApi = baseApi.injectEndpoints({
         return { url: `/users/me`, method: "GET" };
       },
       transformResponse: (response: TResponseRedux<TUser>) => {
-        return { data: response.data, meta: response.meta };
+        return { data: response.data };
       },
       providesTags: ["UserData"],
     }),

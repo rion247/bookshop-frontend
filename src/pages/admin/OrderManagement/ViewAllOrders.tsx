@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useGetAllOrderQuery } from "../../../redux/features/order/orderManagementApi";
 import { Pagination, Table, Tag, type TableColumnsType } from "antd";
 import UpdateOrderStatus from "./UpdateOrderStatus";
+import Loading from "../../Loading/Loading";
 
 export type TTableDataForViewAllOrder = {
   key: string;
@@ -137,7 +138,7 @@ const ViewAllOrders = () => {
   ];
 
   if (isLoading) {
-    <p>Loading...</p>;
+    <Loading />;
   }
 
   return (

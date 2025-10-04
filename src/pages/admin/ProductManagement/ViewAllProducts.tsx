@@ -4,6 +4,7 @@ import type { TableColumnsType } from "antd";
 import { useGetAllProductQuery } from "../../../redux/features/product/productManagementApi";
 import UpdateProductModal from "./UpdateProductModal/UpdateProductModal";
 import DeleteProductModal from "./DeleteProduct/DeleteProduct";
+import Loading from "../../Loading/Loading";
 
 export type TTableDataForViewAllProduct = {
   key: string;
@@ -116,7 +117,7 @@ const ViewAllProducts: React.FC = () => {
   ];
 
   if (isLoading) {
-    <p>Loading...</p>;
+    <Loading />;
   }
 
   return (

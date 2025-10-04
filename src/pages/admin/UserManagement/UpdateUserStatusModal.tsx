@@ -85,7 +85,7 @@ const UpdateUserStatus = ({ item }: { item: TTableDataForViewAllUser }) => {
         <BSForm onSubmit={onSubmit} defaultValues={defaultValue}>
           <Row gutter={12}>
             <Col span={24}>
-              <BSInput type="text" name="name" label="User Name" />
+              <BSInput type="text" name="name" label="User Name" disabled />
             </Col>
           </Row>
 

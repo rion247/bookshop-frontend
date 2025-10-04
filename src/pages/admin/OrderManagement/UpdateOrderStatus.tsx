@@ -86,12 +86,12 @@ const UpdateOrderStatus = ({ item }: { item: TTableDataForViewAllOrder }) => {
         <BSForm onSubmit={onSubmit} defaultValues={defaultValue}>
           <Row gutter={12}>
             <Col span={24}>
-              <BSInput type="text" name="title" label="Book Title" />
+              <BSInput type="text" name="title" label="Book Title" disabled />
             </Col>
           </Row>
           <Row gutter={12}>
             <Col span={24}>
-              <BSInput type="text" name="name" label="Ordered By" />
+              <BSInput type="text" name="name" label="Ordered By" disabled />
             </Col>
           </Row>
           <Row gutter={12}>

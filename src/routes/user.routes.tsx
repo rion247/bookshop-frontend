@@ -18,7 +18,6 @@ const userMainRoutes = [
         element: <EditPersonalInfo />,
       },
       {
-        name: "Change Password",
         path: "change-password",
         element: <ChangePassword />,
       },
@@ -28,8 +27,8 @@ const userMainRoutes = [
     name: "Order Management",
     children: [
       {
-        name: "View All Order",
-        path: "View-all-order",
+        name: "My Order",
+        path: "view-my-order",
         element: <MyOrders />,
       },
     ],
