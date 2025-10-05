@@ -9,6 +9,7 @@ import routesGenerator from "../utilis/routesGenerator";
 import adminMainRoutes from "./admin.routes";
 import userMainRoutes from "./user.routes";
 import ProtectedRoute from "../components/layout/ProtectedRoute";
+import HomePage from "../pages/HomePage/HomePage";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
       {
         path: "about",
         element: <About />,
