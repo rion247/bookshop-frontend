@@ -10,6 +10,11 @@ import adminMainRoutes from "./admin.routes";
 import userMainRoutes from "./user.routes";
 import ProtectedRoute from "../components/layout/ProtectedRoute";
 import HomePage from "../pages/HomePage/HomePage";
+import BookDetails from "../pages/BookDetails/BookDetails";
+import ViewAllBooks from "../pages/ViewAllBooks/ViewAllBooks";
+import AllBlog from "../pages/AllBlog/AllBlog";
+import BlogDetails from "../pages/AllBlog/BlogDetails";
+import VerifyOrder from "../pages/VerifyOrder/VerifyOrder";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +29,26 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "all-books",
+        element: <ViewAllBooks />,
+      },
+      {
+        path: "blog",
+        element: <AllBlog />,
+      },
+      {
+        path: "blog/:id",
+        element: <BlogDetails />,
+      },
+      {
+        path: "book-details/:id",
+        element: <BookDetails />,
+      },
+      {
+        path: "order/verify-order",
+        element: <VerifyOrder />,
       },
     ],
   },

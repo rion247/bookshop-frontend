@@ -55,7 +55,11 @@ export const orderManagementApi = baseApi.injectEndpoints({
     }),
     verifyOrder: build.query({
       query: (order_id) => {
-        return { url: `/order/my-order`, method: "GET", params: { order_id } };
+        return {
+          url: `/order/verify-payment`,
+          method: "GET",
+          params: { order_id },
+        };
       },
     }),
   }),

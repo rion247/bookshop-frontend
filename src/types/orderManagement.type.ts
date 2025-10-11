@@ -23,3 +23,9 @@ export type TransactionInfo = {
   sp_code: string;
   sp_message: string;
 };
+
+export type TOrderResponse = {
+  success: boolean;
+  message: string;
+  data: string;
+};

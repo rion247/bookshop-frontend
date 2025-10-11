@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "The Power of Reading Every Day",
+    "author": "Sophia Turner",
+    "image": "https://i.ibb.co.com/HCStXj3/pexels-pixabay-415829.jpg",
+    "date": "February 19, 2021",
+    "category": "Reading Habit",
+    "content": "Reading every day is not just a habit but a journey of growth. It opens doors to new ideas, improves focus, and brings calmness to the mind. Even a few pages can make a big difference in your life."
+  },
+  {
+    "id": "2",
+    "title": "How Books Shape Our Imagination",
+    "author": "Daniel Reed",
+    "image": "https://i.ibb.co.com/ccJSLgh/user.jpg",
+    "date": "September 01, 2019",
+    "category": "Inspiration",
+    "content": "Books have the unique power to build worlds in our minds. They stretch our imagination, allowing us to experience life through the eyes of countless characters and journeys."
+  },
+  {
+    "id": "3",
+    "title": "Finding Peace in a Busy World Through Reading",
+    "author": "Amelia Grant",
+    "image": "https://i.ibb.co.com/ydhxsrP/creator.jpg",
+    "date": "May 05, 2020",
+    "category": "Lifestyle",
+    "content": "Amid the chaos of modern life, reading offers a quiet escape. It calms the heart, focuses the mind, and helps us reconnect with our inner peace."
+  },
+  {
+    "id": "4",
+    "title": "Five Books That Changed the Way We Think",
+    "author": "Lucas Bennett",
+    "image": "https://i.ibb.co.com/zfCh6P6/pexels-sindre-fs-1040881.jpg",
+    "date": "June 25, 2023",
+    "category": "Book List",
+    "content": "Throughout history, certain books have changed the course of thought and culture. These powerful works inspire reflection, challenge perspectives, and shape the way we see the world."
+  },
+  {
+    "id": "5",
+    "title": "The Joy of Sharing Stories with Others",
+    "author": "Emma Collins",
+    "image": "https://i.ibb.co.com/Nsdpnd0/pexels-rio-kuncoro-2773977.jpg",
+    "date": "November 25, 2023",
+    "category": "Community",
+    "content": "Books become even more meaningful when shared. Whether it’s a small discussion or a large book club, sharing stories connects hearts and strengthens friendships."
+  }
+]

@@ -2,11 +2,13 @@ import { Flex, Spin } from "antd";
 
 const Loading = () => {
   return (
-    <div className="w-full h-full flex justify-between items-center">
-      <Flex align="center" gap="middle">
-        <Spin size="large" />
-      </Flex>
-    </div>
+    <Flex
+      className="w-screen h-screen absolute top-0 bottom-0 left-0 right-0 justify-between items-center bg-neutral-200"
+      align="center"
+      justify="center"
+    >
+      <Spin size="large" />
+    </Flex>
   );
 };
 

@@ -48,23 +48,11 @@ const NavBar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "px-4 xl:px-6 py-3 bg-sky-500 rounded font-semibold text-white"
+              ? "px-4 xl:px-6 py-3 bg-sky-500 rounded font-semibold text-white "
               : "px-3 xl:px-5 py-3 bg-transparent font-normal text-neutral-500"
           }
         >
           Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/all-books"
-          className={({ isActive }) =>
-            isActive
-              ? "px-4 xl:px-6 py-3 bg-sky-500 rounded font-semibold text-white"
-              : "px-3 xl:px-5 py-3 bg-transparent font-normal text-neutral-500"
-          }
-        >
-          All Books
         </NavLink>
       </li>
       <li>
@@ -81,14 +69,27 @@ const NavBar = () => {
       </li>
       <li>
         <NavLink
-          to="/contact-us"
+          to="/all-books"
+          className={({ isActive }) =>
+            isActive
+              ? "px-4 xl:px-6 py-3 bg-sky-500 rounded font-semibold text-white"
+              : "px-3 xl:px-5 py-3 bg-transparent font-normal text-neutral-500"
+          }
+        >
+          All Books
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/blog"
           className={({ isActive }) =>
             isActive
               ? "px-4 xl:px-6 py-3 bg-sky-500 rounded font-semibold text-white"
               : "px-3 xl:px-5 py-2 bg-transparent font-normal text-neutral-500"
           }
         >
-          Contact Us
+          Blog
         </NavLink>
       </li>
     </>
@@ -137,7 +138,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 items-center">{links}</ul>
+          <ul className="menu menu-horizontal px-1 items-center ">{links}</ul>
         </div>
         <div className="navbar-end gap-x-2">
           <div className="flex gap-2">
