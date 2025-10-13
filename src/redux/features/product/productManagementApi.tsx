@@ -9,7 +9,13 @@ export const productManagementApi = baseApi.injectEndpoints({
 
         if (args) {
           args.forEach((item: TQueryParam) => {
-            params.append(item.name, item.value as string);
+            if (
+              item.value !== "" &&
+              item.value !== undefined &&
+              item.value !== null
+            ) {
+              params.append(item.name, item.value as string);
+            }
           });
         }
 

@@ -33,7 +33,7 @@ const SingleFeaturedProducts = ({ item }: { item: TProduct }) => {
         <h2 className="card-title">{item?.title}</h2>
         <p>{shortDescription}</p>
         <div className="">
-          <Link to={`book-details/${item._id}`}>
+          <Link to={`/book-details/${item._id}`}>
             <Button className="w-full mt-2" type="primary">
               Learn More
             </Button>

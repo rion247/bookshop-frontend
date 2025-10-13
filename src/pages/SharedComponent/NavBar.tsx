@@ -10,6 +10,8 @@ import verifyJWTtoken from "../../utilis/verifyJWTtoken";
 import { useAppDispatch } from "./../../redux/hooks";
 import { toast } from "sonner";
 import { FaRegCircleUser } from "react-icons/fa6";
+import Logo from "./Logo";
+import LogoImg from "../../assets/images/book.png";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -99,9 +101,18 @@ const NavBar = () => {
     <Container>
       <Link
         to={"/"}
-        className="text-xl font-extrabold text-blue-500 tracking-wider my-4 mx-auto w-full flex justify-center lg:hidden"
+        className="text-xl font-extrabold text-blue-500 tracking-wider my-4 mx-auto w-full flex flex-col items-center gap-2  justify-center lg:hidden"
       >
-        eBook<span className="text-gray-500">Nest</span>
+        <div>
+          <img
+            className="w-10 h-10 justify-self-center"
+            src={LogoImg}
+            alt="...Loading"
+          />
+          <h6>
+            eBook<span className="text-gray-500">Nest</span>
+          </h6>
+        </div>
       </Link>
       <div className="navbar bg-base-100 shadow-sm mt-2 md:mt-4 lg:mt-6 xl:mt-8 font-poppins">
         <div className="navbar-start">
@@ -130,19 +141,14 @@ const NavBar = () => {
               {links}
             </ul>
           </div>
-          <Link
-            to={"/"}
-            className="text-xl font-extrabold text-blue-500 tracking-wider hidden lg:flex"
-          >
-            eBook<span className="text-gray-500">Nest</span>
-          </Link>
+          <Logo />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 items-center ">{links}</ul>
         </div>
         <div className="navbar-end gap-x-2">
           <div className="flex gap-2">
-            {user && (
+            {user ? (
               <div className="dropdown lg:dropdown-end">
                 <div
                   tabIndex={0}
@@ -164,21 +170,22 @@ const NavBar = () => {
                   </li>
                 </ul>
               </div>
+            ) : (
+              <div className="flex justify-center items-center gap-x-2 text-xs lg:text-base">
+                <Link
+                  to={"/login"}
+                  className="bg-blue-500 text-white py-2 px-3 lg:px-4 xl:px-5 rounded uppercase"
+                >
+                  Login
+                </Link>
+                <Link
+                  to={"/register"}
+                  className="bg-gray-500 text-white py-2 px-3 lg:px-4 xl:px-5  rounded uppercase"
+                >
+                  Register
+                </Link>
+              </div>
             )}
-          </div>
-          <div className="flex justify-center items-center gap-x-2 text-xs lg:text-base">
-            <Link
-              to={"/login"}
-              className="bg-blue-500 text-white py-2 px-3 lg:px-4 xl:px-5 rounded uppercase"
-            >
-              Login
-            </Link>
-            <Link
-              to={"/register"}
-              className="bg-gray-500 text-white py-2 px-3 lg:px-4 xl:px-5  rounded uppercase"
-            >
-              Register
-            </Link>
           </div>
         </div>
       </div>
