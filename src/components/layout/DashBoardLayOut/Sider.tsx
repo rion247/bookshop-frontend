@@ -10,6 +10,7 @@ import sideBarItemsGenerator from "../../../utilis/sideBarItemsGenerator";
 import userMainRoutes from "../../../routes/user.routes";
 import type { ItemType } from "antd/es/menu/interface";
 import { Link } from "react-router-dom";
+import { IoMdBook } from "react-icons/io";
 const { Sider } = Layout;
 
 const UserRoleForSideBarItem = {
@@ -41,48 +42,50 @@ const SiderContent = () => {
   }
 
   return (
-    <Sider
-      breakpoint="lg"
-      collapsedWidth="0"
-      onBreakpoint={(broken) => {
-        console.log(broken);
-      }}
-      onCollapse={(collapsed, type) => {
-        console.log(collapsed, type);
-      }}
-      style={{
-        height: "100vh",
-        position: "sticky",
-        top: "0",
-        left: "0",
-      }}
-    >
-      <div
-        className="demo-logo-vertical"
+    <div>
+      <Sider
+        breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
+        }}
         style={{
-          color: "white",
-          fontSize: "22px",
-          textAlign: "center",
-          marginBottom: "20px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "4rem",
-          fontFamily: "Poppins",
-          fontWeight: "bold",
+          height: "100vh",
+          position: "sticky",
+          top: "0",
+          left: "0",
         }}
       >
-        <Link to={"/"}>
-          <span className="text-white">eBookNest</span>
-        </Link>
-      </div>
-      <Menu
-        theme="dark"
-        mode="inline"
-        defaultSelectedKeys={["4"]}
-        items={items as ItemType[]}
-      />
-    </Sider>
+        <div
+          className="demo-logo-vertical"
+          style={{
+            color: "white",
+            fontSize: "22px",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "4rem",
+            fontFamily: "Poppins",
+            fontWeight: "bold",
+          }}
+        >
+          <Link to={"/"} className="flex justify-between items-center gap-x-2">
+            <IoMdBook className="text-white" />
+            <span className="text-white">eBookNest</span>
+          </Link>
+        </div>
+        <Menu
+          theme="dark"
+          mode="inline"
+          defaultSelectedKeys={["4"]}
+          items={items as ItemType[]}
+        />
+      </Sider>
+    </div>
   );
 };
 

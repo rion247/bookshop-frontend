@@ -3,3 +3,4 @@ export * from "./sideBar.type";
 export * from "./userManagement.type";
 export * from "./productManagement.type";
 export * from "./orderManagement.type";
+export * from "./reviewManagement.type";

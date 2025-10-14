@@ -10,4 +10,18 @@
   font-family: "Lato", sans-serif;
 }
 
-/* font-family: "Lato", sans-serif; */
+.outlined-rate .ant-rate-star svg {
+  color: transparent !important;
+  stroke: #fadb14;
+  stroke-width: 30;
+}
+
+.outlined-rate .ant-rate-star.ant-rate-star-full svg {
+  color: #fadb14 !important;
+  stroke: none;
+}
+
+.outlined-rate .ant-rate-star:hover svg {
+  color: #fadb14 !important;
+  stroke: none;
+}

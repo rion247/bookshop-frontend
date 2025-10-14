@@ -1,7 +1,6 @@
 import React from "react";
-
 import { Button, Layout } from "antd";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import SiderContent from "./Sider";
 import { useAppDispatch } from "../../../redux/hooks";
 import { logOut } from "../../../redux/features/auth/authSlice";
@@ -31,7 +30,12 @@ const DashBoardLayOut: React.FC = () => {
               justifyContent: "flex-end",
             }}
           >
-            <Button onClick={handleLogOutButton}>Logout</Button>
+            <Link to={"/"}>
+              <Button type="link">Back To Home</Button>
+            </Link>
+            <Button className="ml-2" onClick={handleLogOutButton}>
+              Logout
+            </Button>
           </Header>
           <Content style={{ margin: "24px 16px 0" }}>
             <div
@@ -43,6 +47,7 @@ const DashBoardLayOut: React.FC = () => {
               <Outlet />
             </div>
           </Content>
+
           <Footer style={{ textAlign: "center" }}>
             Copyright ©{new Date().getFullYear()} All rights reserved by Vivian
             Rion Marandi.

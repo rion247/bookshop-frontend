@@ -10,6 +10,8 @@ import BSForm from "../../components/form/BSForm";
 import BSInput from "../../components/form/BSInput";
 import type { TOrderResponse, TProduct, TResponseRedux } from "../../types";
 import { useCreateOrderMutation } from "../../redux/features/order/orderManagementApi";
+import AddReviewModal from "./AddReview";
+import Reviews from "./Reviews";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -24,7 +26,10 @@ const BookDetails = () => {
 
   return (
     <Container>
-      <div className="my-6 md:my-8 lg:my-12 xl:my-20">
+      <div className="my-6 md:my-8 lg:my-12">
+        <div className="flex justify-end">
+          <AddReviewModal item={bookData!} />
+        </div>
         <section className="border border-neutral-300 text-gray-100 my-10">
           <div className="container max-w-6xl p-4 md:p-6 mx-auto space-y-6 sm:space-y-12 ">
             <img
@@ -71,6 +76,7 @@ const BookDetails = () => {
           </div>
         </section>
       </div>
+      <Reviews id={bookData?._id as string} />
     </Container>
   );
 };

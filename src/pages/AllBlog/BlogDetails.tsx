@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { TBlog } from "../HomePage/Blogs/Blog";
 import Container from "../../components/Shared/Container";
+import LiveTestimonial from "./LiveTestimonial";
 
 const BlogDetails = () => {
   const [blog, setBlog] = useState<TBlog[]>([]);
@@ -41,6 +42,7 @@ const BlogDetails = () => {
           </div>
         </section>
       </div>
+      <LiveTestimonial />
     </Container>
   );
 };

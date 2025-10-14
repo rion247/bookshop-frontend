@@ -15,7 +15,10 @@ const AllBlog = () => {
     <Container>
       <div className="my-6 md:my-8 lg:my-12 xl:my-20">
         {blog?.map((item) => (
-          <section className="border border-neutral-300 text-gray-100 my-10">
+          <section
+            key={item?.id}
+            className="border border-neutral-300 text-gray-100 my-10"
+          >
             <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
               <a
                 rel="noopener noreferrer"
